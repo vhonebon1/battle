@@ -1,8 +1,32 @@
 require './app.rb'
 
 describe Battle, :type => :feature do
-  it "shows an expected string" do
-  visit '/'
-  expect(page).to have_content 'Testing infrastructure working!'
-end
+
+  describe "index.erb" do
+    before do
+      visit '/'
+    end
+
+    it "shows an expected string" do
+      expect(page).to have_content 'Welcome to Battle'
+    end
+
+    it "Prompts the user to enter names" do
+      expect(page).to have_content "Enter your Names"
+    end
+
+    describe "Player Name Form" do
+      it "has a text field for player 1" do
+        expect { find_field('player-1') }.to_not raise_error
+      end
+
+      it "has a text field for player 2" do
+        expect { find_field('player-2') }.to_not raise_error
+      end
+
+      it 'has a submit button' do
+        expect { find_button('Play') }.to_not raise_error
+      end
+    end
+  end
 end
