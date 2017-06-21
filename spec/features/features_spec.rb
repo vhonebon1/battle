@@ -32,16 +32,15 @@ describe Battle, :type => :feature do
 
   describe "play.erb" do
     before do
-      visit '/'
+      sign_in_and_play
     end
 
     it "displays player names" do
-      fill_in 'player-1', with: 'Tom'
-      fill_in 'player-2', with: 'Verity'
-      click_button('Play')
       expect(page).to have_content 'Verity'
     end
+
+    it "displays Player 2's hit points" do
+      expect(page).to have_content 'Player 2 HP: 100'
+    end
   end
-
-
 end
