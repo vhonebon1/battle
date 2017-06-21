@@ -21,5 +21,14 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
+  post '/attack' do
+    session[:player_2_hp] -= 10
+    redirect to('/confirmation')
+  end
+
+  get '/confirmation' do
+    erb(:attack)
+  end
+
   run! if app_file == $0
 end

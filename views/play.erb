@@ -2,3 +2,7 @@
 <h2> vs </h2>
 <h1><%= @player2_name %></h1>
 <p id="player_2_hp">Player 2 HP: <%= @player_2_hp %></p>
+
+<form class="player_actions" action="/attack" method="post">
+  <input type="submit" value="Attack">
+</form>
