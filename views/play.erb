@@ -1,7 +1,7 @@
-<h1 align="center"><%= @player1_name %></h1>
-<h2 align="center"> vs. </h2>
-<h1 align="center"><%= @player2_name %></h1>
-<p id="player_2_hp" align="center"> <%=@player2_name%>'s HP: <%= $player_2.hit_points %> </p>
+<h1 align="center"><%= @game.player_1.name %></h1>
+<h2 align="center">vs.</h2>
+<h1 align="center"><%= @game.player_2.name %></h1>
+<h3 id="player_2_hp" align="center"> <%= @game.player_2.name %>'s HP: <%= @game.player_2.hit_points %> </h3>
 
 <form align="center" class="player_actions" action="/attack" method="get">
   <input type="submit" value="Attack">

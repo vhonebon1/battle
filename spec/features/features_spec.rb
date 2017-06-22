@@ -49,7 +49,7 @@ describe Battle, :type => :feature do
 
     it 'gives an attack confirmation' do
         click_button('Attack')
-        expect(page).to have_content 'Attack reduced player\'s HP by 10'
+        expect(page).to have_content 'Tom attacked Verity'
     end
   end
 
