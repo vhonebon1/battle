@@ -5,5 +5,6 @@ gem 'rspec'
 gem 'shotgun'
 gem 'sinatra'
 gem 'capybara'
+gem 'simplecov', :require => false, :group => :test
 
 # gem "rails"

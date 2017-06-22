@@ -16,6 +16,10 @@ attr_reader :players
     @players[1]
   end
 
+  def random_start_player
+    @players[(rand(2))]
+  end
+
   def attack(player)
     player.receive_damage
   end

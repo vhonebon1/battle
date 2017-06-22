@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require './app.rb'
 require 'capybara'
 require 'capybara/rspec'
