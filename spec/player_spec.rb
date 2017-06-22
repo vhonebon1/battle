@@ -1,8 +1,8 @@
 require 'player.rb'
 
 describe Player do
-  let(:alice) { Player.new("Alice", 90)}
-  let(:elle) { Player.new("Elle")}
+  let(:alice) { Player.new("Alice", 90) }
+  let(:elle) { Player.new("Elle") }
 
   it "should return its name" do
     expect(alice.name).to eq 'Alice'
@@ -16,16 +16,9 @@ describe Player do
     expect(elle.hit_points).to eq(100)
   end
 
-  describe "#attack" do
-    it "damages the other player" do
-      expect(elle).to receive(:receive_damage)
-      alice.attack(elle)
-    end
-  end
-
   describe "#receive_damage" do
-    it "reduced play's HP points" do
-      expect {alice.receive_damage}.to change {alice.hit_points}.by(-10)
+    it "reduced player's HP points" do
+      expect { alice.receive_damage }.to change { alice.hit_points }.by(-10)
     end
   end
 

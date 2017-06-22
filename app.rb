@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/player.rb'
+require './lib/game.rb'
 
 class Battle < Sinatra::Base
 
@@ -21,8 +22,10 @@ class Battle < Sinatra::Base
     erb(:play)
   end
 
-  post '/attack' do
-    $player_1.attack($player_2)
+  get '/attack' do
+    @player_1 = $player_1
+    @player_2 = $player_2
+    Game.new.attack(@player_2)
     redirect to('/confirmation')
   end
 
@@ -31,4 +34,5 @@ class Battle < Sinatra::Base
   end
 
   run! if app_file == $0
+
 end
