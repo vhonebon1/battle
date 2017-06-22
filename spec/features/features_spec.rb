@@ -12,7 +12,7 @@ describe Battle, :type => :feature do
     end
 
     it "Prompts the user to enter names" do
-      expect(page).to have_content "Enter your Names"
+      expect(page).to have_content "Enter your names"
     end
 
     describe "Player Name Form" do
@@ -40,7 +40,7 @@ describe Battle, :type => :feature do
     end
 
     it "displays Player 2's hit points" do
-      expect(page).to have_content 'Player 2 HP: 100'
+      expect(page).to have_content 'Verity\'s HP: 100'
     end
 
     it 'has a submit button' do
